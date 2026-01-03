@@ -1,6 +1,6 @@
-# 🌍 WanderLust
+# 🌍 StayHub
 
-WanderLust is a full-stack web application for exploring and booking holiday stays.  
+StayHub is a full-stack web application for exploring and booking holiday stays.  
 It allows users to browse property listings, add reviews, and manage CRUD operations in a secure and user-friendly way.  
 
 [🚀 Live Demo](https://wanderlust-umhc.onrender.com)
