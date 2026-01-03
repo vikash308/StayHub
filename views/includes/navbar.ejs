@@ -1,85 +1,215 @@
 <style>
-  /* Navbar Background & Shadow */
+/* ===============================
+   ULTRA PREMIUM NAVBAR (FINAL)
+   =============================== */
+
 .navbar {
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 0.6rem 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(15,23,42,0.85),
+    rgba(2,6,23,0.75)
+  );
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  padding: 0.7rem 1.2rem;
 }
 
-/* Brand */
+/* ===============================
+   BRAND
+   =============================== */
+
 .navbar-brand {
-  font-weight: 600;
-  font-size: 1.3rem;
-  color:  #fe424d;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #e5e7eb !important;
+  letter-spacing: 0.5px;
+  position: relative;
 }
 
 .navbar-brand i {
-  color:  #fe424d;
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Nav Links */
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  filter: blur(20px);
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+/* ===============================
+   NAV LINKS
+   =============================== */
+
 .navbar-nav .nav-link {
-  color: #555;
+  color: #cbd5f5 !important;
   font-weight: 500;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  transition: color 0.2s ease;
+  letter-spacing: 0.3px;
+  position: relative;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
 }
 
-/* Search Bar */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #a78bfa);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f9fafb !important;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   SEARCH BAR
+   =============================== */
+
 .navbar .form-control {
-  border-radius: 50px;
-  padding: 0.35rem 1rem;
-  border: 1px solid #ddd;
-  transition: all 0.2s ease;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #f8fafc;
+  border-radius: 999px;
+  padding: 0.45rem 1.2rem;
+  width: 320px;
+}
+
+.navbar .form-control::placeholder {
+  color: #94a3b8;
 }
 
 .navbar .form-control:focus {
-  border-color:  #fe424d;
-  box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+  background: rgba(255,255,255,0.1);
+  border-color: #22d3ee;
+  box-shadow: 0 0 25px rgba(34,211,238,0.4);
 }
 
+/* Search button */
 .btn-search {
-  background:  #fe424d;
-  color: #fff;
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  padding: 0.35rem 0.6rem;
   border: none;
-  margin-left: 0.3rem;
-  transition: background 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-search i {
+  color: #020617;
 }
 
 .btn-search:hover {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(8deg);
 }
 
-/* Buttons */
-.navbar-nav .btn {
-  border-radius: 25px;
-  padding: 0.35rem 1rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
+/* ===============================
+   AUTH TEXT
+   =============================== */
+
+.navbar-nav .nav-link b {
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.navbar-nav .btn:hover {
-  transform: translateY(-2px);
+/* ===============================
+   TOGGLER
+   =============================== */
+
+.navbar-toggler {
+  border: none;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 576px) {
-  .form-check, .navbar .form-control{
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* ===============================
+   MOBILE NAVBAR
+   =============================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.6rem 0.9rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  .navbar-collapse {
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(2,6,23,0.92);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  }
+
+  .navbar-nav {
+    gap: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .navbar-nav .nav-link::after {
+    display: none;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background: rgba(34,211,238,0.15);
+  }
+
+  .navbar form {
     width: 100%;
-    margin-top: 0.3rem;
+    margin: 10px 0;
   }
 
-  .navbar-nav .btn {
-    margin-top: 0.3rem;
+  .navbar .form-control {
     width: 100%;
-  }
-  .btn-search{
-    width: fit-content !important;
+    font-size: 0.9rem;
   }
 }
+
+/* ===============================
+   LOCK SCROLL WHEN OPEN
+   =============================== */
+
+body:has(.navbar-collapse.show) {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.navbar-collapse.show {
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
 
 </style>
 <nav

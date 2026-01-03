@@ -1,139 +1,152 @@
+/* ===============================
+   GLOBAL BASE STYLES (SAFE)
+   =============================== */
+
 body {
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: #e5e7eb;
 }
 
-.navbar {
-    height: 5rem;
-    color: #fff;
-    margin-bottom: 1rem;
-}
-
-.fa-compass {
-    color: #fe424d;
-    font-size: 2rem;
-}
-
+/* Container grows naturally */
 .container {
     flex: 1;
 }
 
-.nav-link {
-    color: #222222 !important;
-}
+/* ===============================
+   LINKS (NO GLOBAL COLOR FORCE)
+   =============================== */
 
 a {
-    text-decoration: none !important;
-    color: #222222 !important;
+    text-decoration: none;
 }
 
-.f-info-links a:hover {
-    text-decoration: underline;
+/* ===============================
+   NAVBAR BASICS (OVERRIDDEN LATER)
+   =============================== */
+
+.navbar {
+    height: 5rem;
+    margin-bottom: 1rem;
 }
 
-.f-info-links {
-    width: 100%;
+.fa-compass {
+    font-size: 2rem;
 }
 
-.f-info-socials i {
-    margin-right: 1rem;
-    font-size: 1.2rem;
-}
-
-.f-info {
-    display: flex;
-    height: 8rem;
-    background-color: #ebebeb;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-}
-
-
-
-.card {
-    border: none !important;
-    margin-bottom: 2rem;
-}
-
-.card-img-top {
-    border-radius: 1rem !important;
-    width: 100%;
-    object-fit: cover;
-}
-
-.card-body {
-    padding: 0 !important;
-}
-
-.card-text p {
-    font-weight: 400;
-}
-
-
-.card-img-overlay {
-    opacity: 1;
-}
-
-.card-img-overlay:hover {
-    opacity: 0.2;
-    background-color: #fff;
-}
-
+/* ===============================
+   BUTTON UTILITIES
+   =============================== */
 
 .btn2 {
-    background-color: #fe424d !important;
-    border: none !important;
-    margin-bottom: 2rem;
-    color: #fff !important;
+    background-color: #fe424d;
+    border: none;
+    color: #fff;
 }
 
-.show-img {
-    height: 30vh;
-}
-
-.btns {
-    display: flex;
-    justify-content: center;
-}
-
-.deleteBtn {
-    background-color: red !important;
-}
-
-.editBtn {
-    background-color: green !important;
-    color: white !important;
-}
-
-#map {
-    width: 50vw;
-
-}
-
-.hidden{
-    display: none;
-}
-
-.all{
-    display: flex;
-    align-items: center;
-}
-
-  .btn-search{
+.btn-search {
     background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
-  }
-  .btn-search:hover{
+}
+
+.btn-search:hover {
     color: #fff;
-  }
-  #input{
-    border-radius: 1rem;
-    max-width: 300px;
-  }
+}
 
+/* ===============================
+   HELPERS
+   =============================== */
 
+.hidden {
+    display: none;
+}
+
+.all {
+    display: flex;
+    align-items: center;
+}
+
+/* ===============================
+   MAP
+   =============================== */
+
+#map {
+    width: 100%;
+    min-height: 300px;
+}
+
+/* ===============================
+   ALERT / TOAST (GLOBAL)
+   =============================== */
+
+.alert {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    min-width: 280px;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    backdrop-filter: blur(16px);
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #f9fafb;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    animation: slideIn 0.4s ease forwards;
+}
+
+.alert-success {
+    background: linear-gradient(135deg,
+            rgba(34, 197, 94, 0.85),
+            rgba(22, 163, 74, 0.85));
+}
+
+.alert-danger {
+    background: linear-gradient(135deg,
+            rgba(239, 68, 68, 0.9),
+            rgba(220, 38, 38, 0.9));
+}
+
+.alert .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+}
+
+.alert .btn-close:hover {
+    opacity: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.alert.fade:not(.show) {
+    animation: slideOut 0.35s ease forwards;
+}
+
+@keyframes slideOut {
+    to {
+        transform: translateX(120%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .alert {
+        right: 50%;
+        transform: translateX(50%);
+        width: calc(100% - 30px);
+    }
+}

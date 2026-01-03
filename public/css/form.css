@@ -1,26 +1,39 @@
+/* ===============================
+   SAFE FORM & INPUT STYLES
+   =============================== */
 
-  .card {
-  border: none;
-  background-color: #fff;
-}
-
+/* Inputs & selects (neutral base) */
 input.form-control,
 textarea.form-control,
 select.form-select {
-  border: 1px solid #ddd;
-  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  transition: all 0.3s ease;
 }
 
+/* Placeholder */
+input.form-control::placeholder,
+textarea.form-control::placeholder {
+  color: #94a3b8;
+}
+
+/* Focus state (premium cyan system) */
 input.form-control:focus,
 textarea.form-control:focus,
 select.form-select:focus {
-  border-color: #fe424d;
-  box-shadow: 0 0 5px rgba(13, 110, 253, 0.2);
+  border-color: #22d3ee;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.45);
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
 }
 
-.btn-dark:hover {
-  background-color: #fe424d;
+/* ===============================
+   BUTTON HOVER (SAFE)
+   =============================== */
+
+/* ONLY affect buttons that explicitly use this class */
+.btn-hover-lift:hover {
   transform: translateY(-2px);
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
 }
-

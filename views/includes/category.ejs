@@ -1,3 +1,164 @@
+<style>
+/* ===============================
+   FUTURISTIC CATEGORY BAR (FINAL)
+   =============================== */
+
+.category-bar {
+  position: relative;
+  padding: 14px 18px;
+  margin-top: 10px;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08),
+    0 25px 60px rgba(0,0,0,0.6);
+}
+
+/* ===============================
+   FILTERS
+   =============================== */
+
+.filters {
+  gap: 28px;
+  padding: 6px 10px;
+}
+
+.filter {
+  min-width: 72px;
+  text-align: center;
+  color: #cbd5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.filter i {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+  color: #c7d2fe;
+  transition: all 0.4s ease;
+}
+
+.filter p {
+  font-size: 0.75rem;
+  letter-spacing: 0.4px;
+  opacity: 0.75;
+  color: #fff;
+}
+
+/* Hover effect */
+.filter:hover i {
+  color: #22d3ee;
+  transform: scale(1.15) translateY(-2px);
+}
+
+.filter:hover p {
+  opacity: 1;
+  color: #e5e7eb;
+}
+
+/* Glow dot */
+.filter::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #22d3ee;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.filter:hover::after {
+  opacity: 1;
+}
+
+/* ===============================
+   ARROW BUTTONS
+   =============================== */
+
+.arrow-btn {
+  background: radial-gradient(circle, #22d3ee, #6366f1);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(34,211,238,0.4);
+  transition: all 0.3s ease;
+}
+
+.arrow-btn i {
+  color: #020617;
+  font-size: 1rem;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.15) rotate(8deg);
+  box-shadow: 0 20px 50px rgba(99,102,241,0.6);
+}
+
+/* ===============================
+   PRICE TOGGLE
+   =============================== */
+
+.form-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 6px;
+}
+
+.form-check-input {
+  width: 52px;
+  height: 26px;
+  background-color: #020617;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+  background: linear-gradient(135deg, #22d3ee, #a78bfa);
+  box-shadow: 0 0 20px rgba(34,211,238,0.6);
+  border-color: transparent;
+}
+
+.form-check-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.4px;
+  color: #cbd5f5;
+}
+
+/* ===============================
+   MOBILE POLISH
+   =============================== */
+
+@media (max-width: 768px) {
+  .filters {
+    gap: 20px;
+  }
+
+  .filter i {
+    font-size: 1.4rem;
+  }
+}
+
+</style>
+
+
 <div class="category-bar d-flex align-items-center justify-content-between">
   <!-- Left Arrow -->
   <button class="arrow-btn left" id="leftArrow">
