@@ -218,7 +218,7 @@ body:has(.navbar-collapse.show) {
   <div class="container-fluid">
     <a class="navbar-brand" href="/listing"
       ><i class="fa-regular fa-compass"></i
-    ></a>
+    > StayHub</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -228,10 +228,7 @@ body:has(.navbar-collapse.show) {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listing">Explore</a>
-      </div>
-      <div class="navbar-nav ms-auto">
+       <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search" action="/listing/search">
         <input class="form-control me-2" type="search" placeholder="Search destination" id="input" name="search"/>
         <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -245,7 +242,8 @@ body:has(.navbar-collapse.show) {
         <%}%> <%if(currentUser){%>
         <a class="nav-link" href="/user/logout"><b>Logout</b></a>
         <%}%>
-      </div>
+      
+     </div>
     </div>
   </div>
 </nav>
